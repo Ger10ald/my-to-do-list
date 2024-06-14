@@ -103,12 +103,7 @@ ul {
   border: 2px solid #006400; /* Dark green */
 }
 
-.list-btn:hover {
-  box-shadow: none;
-  border: 1px solid rgba(173, 216, 230, 0.662);
 
-  background-color: #32CD32;
-}
 
 .enter-btn {
   border-top-left-radius: 0;
