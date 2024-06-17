@@ -3,10 +3,6 @@ import { useState } from 'react';
 
 export default function ListItem(props) {
     
-    /**
-     * Create a stateful variable to keep track of the state of 
-     * the pop window when user clicks on paragraph element
-     */
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isEdit, setIsEdit] = useState(false);
     const [modalText, setModalText] = useState(props.text);
@@ -32,11 +28,6 @@ export default function ListItem(props) {
     }
 
     const handleSaveModalText = () => {
-        /**
-         *  Here we pass the updated text to the parent component
-         * How does this work, IDK. I thought data only flowed from parent component
-         * to children components
-         * */
         props.onHandleChangeText(modalText);
         setIsModalOpen(false);
     }
@@ -45,7 +36,14 @@ export default function ListItem(props) {
         <li className='unfinished-list-item'>
             <div className="text-ctn" onClick={handleParaClick}>
                 <p className="idx-p">{props.idx}.</p>
-                <p className="text-p" >{props.text}</p>
+                <p className="text-p"                     
+                    role="button" 
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            handleParaClick();
+                        }
+                    }}>{props.text}</p>
             </div>
             <div className="btn-ctn">
                 <button 

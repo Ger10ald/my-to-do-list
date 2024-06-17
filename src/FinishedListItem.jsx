@@ -15,7 +15,14 @@ export default function FinishedListItem(props){
     return(
         <li className='finished-list-item'>
             <div className="text-ctn" onClick={handleParaClick}>
-                <p className="finished-text-p">{props.text}</p>
+                <p className="finished-text-p"
+                    role="button" 
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            handleParaClick();
+                        }
+                    }}>{props.text}</p>
             </div>
             <div className="btn-ctn">
                 <button 
