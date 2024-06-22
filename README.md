@@ -21,3 +21,6 @@ The ListItem component is used to manage and display each unfinished task. It in
 ### FinishedListItem Component
 
 The FinishedListItem component is used to display tasks that have been marked as completed. It allows users to view the task details in a modal and delete the task from the finished list.
+
+## Try it out
+https://main--prismatic-taffy-46c637.netlify.app/
